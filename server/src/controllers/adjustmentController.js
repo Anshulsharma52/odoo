@@ -62,7 +62,6 @@ const createAdjustment = (req, res, next) => {
     next(error);
   }
 };
-
 module.exports = {
   getAdjustments,
   createAdjustment

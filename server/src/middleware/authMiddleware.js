@@ -15,8 +15,6 @@ const protect = (req, res, next) => {
       if (!user) {
         return res.status(401).json({ success: false, message: 'User associated with token not found' });
       }
-
-      // Exclude password
       const { password, ...userWithoutPassword } = user;
       req.user = userWithoutPassword;
       return next();

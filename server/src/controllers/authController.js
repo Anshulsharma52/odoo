@@ -51,8 +51,7 @@ const signup = async (req, res, next) => {
   }
 };
 
-// @desc    Authenticate user & get token
-// @route   POST /api/auth/login
+
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;

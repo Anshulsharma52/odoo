@@ -24,7 +24,7 @@
   ],
   "categories": [
     {
-      "id": "cat-1",
+      "id": "cat-1", 
       "name": "Raw Materials",
       "description": "Metals, polymers, and raw inputs",
       "productCount": 2,
@@ -981,4 +981,5 @@
     }
   ],
   "otpCodes": []
+  
 }
