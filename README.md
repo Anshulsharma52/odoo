@@ -1,37 +1,41 @@
 # StockSense IMS
 
-StockSense IMS is an inventory-management project with a React/Vite client and an Express API.
+StockSense IMS is an inventory management app with a React dashboard and an Express API scaffold.
 
-> **Project status:** This repository is currently a scaffold. The client source files are placeholders, and the API entry point refers to routes and middleware that have not yet been added. The client can be installed and run; the server will need those missing modules before it can start successfully.
+The client currently runs with demo data in browser memory. You can search and filter products and add items, but changes are not saved after a page reload, and the client is not connected to the API yet.
 
-## Tech stack
+## Features
 
-- React 19 and Vite 8
+- Responsive inventory dashboard
+- Product search and stock status filters
+- Summary cards for product counts, stock alerts, and inventory value
+- Add product form with stock status calculated from quantity
+- Express API scaffold with an intended health endpoint at `/api/health`
+
+## Technology
+
+- React 19 and Vite
 - Node.js and Express 5
-- MongoDB/Mongoose (optional; the server is configured to use it only when enabled)
+- Mongoose for optional MongoDB connectivity
 
-## Repository structure
+## Project structure
 
-```
+```text
 .
-├── client/              # React single-page application
-│   ├── src/             # Application source code
+├── client/             # React and Vite frontend
+│   ├── src/
 │   └── package.json
-├── server/              # Express API
-│   ├── src/services/    # Server-side services
-│   ├── app.js           # Express application configuration
-│   ├── server.js        # Server entry point
+├── server/             # Express API scaffold
+│   ├── src/services/
+│   ├── app.js
+│   ├── server.js
 │   └── package.json
 └── README.md
 ```
 
-## Prerequisites
+## Run the frontend
 
-- Node.js 20 or later
-- npm
-- MongoDB only if you plan to enable the Mongoose connection
-
-## Run the client
+Install dependencies and start the Vite development server:
 
 ```bash
 cd client
@@ -39,47 +43,38 @@ npm install
 npm run dev
 ```
 
-Vite will print the local development URL, usually `http://localhost:5173`.
+Vite prints the local URL, usually `http://localhost:5173`.
 
-Other client commands:
+Available client scripts:
 
 ```bash
-npm run build    # Create a production build
-npm run preview  # Preview the production build
+npm run dev      # Start the development server
+npm run build    # Build the frontend for production
+npm run preview  # Preview a production build
 npm run lint     # Run ESLint
 ```
 
-## Server configuration
+## API status
 
-Create `server/.env` with the settings you need:
+The Express server is not runnable yet. `server/app.js` imports route modules and error middleware that are not currently present in the repository, so starting `server/server.js` fails with a module-not-found error. The client uses local demo data and does not call the API.
+
+The server is configured to connect to MongoDB only when `USE_MONGOOSE=true` and `MONGODB_URI` is set. For example, after the missing API modules are implemented, create `server/.env` with:
 
 ```env
 PORT=5000
 NODE_ENV=development
-
-# Set both values to use MongoDB.
 USE_MONGOOSE=true
 MONGODB_URI=mongodb://127.0.0.1:27017/stocksense
 ```
 
-When `USE_MONGOOSE` is not `true`, the server skips the MongoDB connection attempt.
+The intended API base URL is `http://localhost:5000/api`; the intended health endpoint is `GET /api/health`.
 
-After the missing route and middleware modules have been implemented, install and start the API with:
+## Requirements
 
-```bash
-cd server
-npm install
-node server.js
-```
-
-The intended API base URL is `http://localhost:5000/api`; the health endpoint is `GET /api/health`.
-
-## Current backend implementation note
-
-`server/app.js` imports authentication, inventory, warehouse, transaction, ledger, dashboard, and error-handling modules. Those paths are not yet in this repository, so running `node server.js` currently results in a module-not-found error. Add the referenced `routes/` and `middleware/` files before enabling the API in development or deployment.
+- Node.js
+- npm
+- MongoDB only if you enable the Mongoose connection
 
 ## Contributing
 
-1. Create a branch for your change.
-2. Keep client and server changes scoped to their respective directories.
-3. Run the relevant lint/build checks before opening a pull request.
+Keep frontend and backend changes scoped to their respective directories. Before opening a pull request, run the relevant client lint and build commands.
