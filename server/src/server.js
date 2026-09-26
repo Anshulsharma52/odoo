@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// Optional MongoDB connection: connects if available, else continues with persistent JSON store
+
 if (MONGODB_URI && process.env.USE_MONGOOSE === 'true') {
   mongoose.connect(MONGODB_URI)
     .then(() => console.log(' Connected to MongoDB instance successfully.'))
