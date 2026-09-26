@@ -155,13 +155,13 @@
       "unitOfMeasure": "units",
       "reorderLevel": 15,
       "initialStock": 40,
-      "currentStock": 40,
+      "currentStock": 35,
       "description": "Adjustable mesh office chair with lumbar support",
       "locationStock": {
-        "WH-MAIN-RACK-B": 40
+        "WH-MAIN-RACK-B": 35
       },
       "createdAt": "2026-09-20T04:54:36.962Z",
-      "updatedAt": "2026-09-26T04:54:36.962Z"
+      "updatedAt": "2026-09-26T10:19:44.162Z"
     },
     {
       "id": "prod-3",
@@ -434,6 +434,29 @@
       "validatedBy": "Demo Admin"
     },
     {
+      "id": "del-2",
+      "deliveryNumber": "DEL-0002",
+      "customer": "Horizon Enterprise",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-B",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-2",
+          "productName": "Ergonomic Office Chair",
+          "sku": "CHR-002",
+          "quantity": 5,
+          "unitOfMeasure": "units"
+        }
+      ],
+      "notes": "Order confirmed, pending warehouse packing",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-26T04:54:36.962Z",
+      "validatedAt": "2026-09-26T10:19:44.168Z",
+      "validatedBy": "Demo Admin",
+      "updatedAt": "2026-09-26T10:19:44.168Z"
+    },
+    {
       "id": "del-1",
       "deliveryNumber": "DEL-0001",
       "customer": "Apex Tech Corp",
@@ -453,26 +476,6 @@
       "createdBy": "Demo Admin",
       "createdAt": "2026-09-23T04:54:36.962Z",
       "validatedAt": "2026-09-23T04:54:36.962Z"
-    },
-    {
-      "id": "del-2",
-      "deliveryNumber": "DEL-0002",
-      "customer": "Horizon Enterprise",
-      "warehouseId": "wh-1",
-      "sourceLocation": "WH-MAIN-RACK-B",
-      "status": "WAITING",
-      "items": [
-        {
-          "productId": "prod-2",
-          "productName": "Ergonomic Office Chair",
-          "sku": "CHR-002",
-          "quantity": 5,
-          "unitOfMeasure": "units"
-        }
-      ],
-      "notes": "Order confirmed, pending warehouse packing",
-      "createdBy": "Demo Admin",
-      "createdAt": "2026-09-26T04:54:36.962Z"
     }
   ],
   "transfers": [
@@ -549,6 +552,27 @@
       "validatedBy": "Demo Admin"
     },
     {
+      "id": "tr-2",
+      "transferNumber": "TR-0002",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "status": "READY",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 20,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "Balancing rack capacity",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
       "id": "tr-1",
       "transferNumber": "TR-0001",
       "sourceWarehouseId": "wh-1",
@@ -569,27 +593,6 @@
       "createdBy": "Demo Admin",
       "createdAt": "2026-09-24T04:54:36.962Z",
       "validatedAt": "2026-09-24T04:54:36.962Z"
-    },
-    {
-      "id": "tr-2",
-      "transferNumber": "TR-0002",
-      "sourceWarehouseId": "wh-1",
-      "sourceLocation": "WH-MAIN-RACK-A",
-      "destinationWarehouseId": "wh-1",
-      "destinationLocation": "WH-MAIN-RACK-B",
-      "status": "READY",
-      "items": [
-        {
-          "productId": "prod-1",
-          "productName": "Steel Rods (12mm)",
-          "sku": "STL-001",
-          "quantity": 20,
-          "unitOfMeasure": "kg"
-        }
-      ],
-      "notes": "Balancing rack capacity",
-      "createdBy": "Demo Admin",
-      "createdAt": "2026-09-26T04:54:36.962Z"
     }
   ],
   "adjustments": [
@@ -662,6 +665,24 @@
     }
   ],
   "stockLedger": [
+    {
+      "id": "sto-1790417984165-946",
+      "createdAt": "2026-09-26T10:19:44.165Z",
+      "updatedAt": "2026-09-26T10:19:44.165Z",
+      "date": "2026-09-26T10:19:44.165Z",
+      "transactionType": "DELIVERY",
+      "referenceNumber": "DEL-0002",
+      "productId": "prod-2",
+      "productName": "Ergonomic Office Chair",
+      "sku": "CHR-002",
+      "sourceLocation": "WH-MAIN-RACK-B",
+      "destinationLocation": "Customer (Horizon Enterprise)",
+      "quantity": -5,
+      "previousStock": 40,
+      "newStock": 35,
+      "performedBy": "Demo Admin",
+      "notes": "Order confirmed, pending warehouse packing"
+    },
     {
       "id": "sto-1790400224718-301",
       "createdAt": "2026-09-26T05:23:44.718Z",

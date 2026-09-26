@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+
 const { errorHandler, notFound } = require('./middleware/errorMiddleware');
 
 // Route imports
@@ -16,14 +17,35 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 
+// ================================
 // Middlewares
+// ================================
+
 app.use(cors());
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
-// Health Check API
+// ================================
+// API Root
+// ================================
+
+app.get('/api', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'StockSense IMS API is running',
+    version: '1.0.0'
+  });
+});
+
+// ================================
+// Health Check
+// ================================
+
 app.get('/api/health', (req, res) => {
-  res.json({
+  res.status(200).json({
+    success: true,
     status: 'healthy',
     application: 'StockSense IMS API',
     version: '1.0.0',
@@ -31,20 +53,38 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Mount Routes
+// ================================
+// API Routes
+// ================================
+
 app.use('/api/auth', authRoutes);
+
 app.use('/api/products', productRoutes);
+
 app.use('/api/categories', categoryRoutes);
+
 app.use('/api/warehouses', warehouseRoutes);
+
 app.use('/api/receipts', receiptRoutes);
+
 app.use('/api/deliveries', deliveryRoutes);
+
 app.use('/api/transfers', transferRoutes);
+
 app.use('/api/adjustments', adjustmentRoutes);
+
 app.use('/api/ledger', ledgerRoutes);
+
 app.use('/api/dashboard', dashboardRoutes);
 
+// ================================
 // Error Handling
+// ================================
+
+// 404 handler - MUST be after all routes
 app.use(notFound);
+
+// Global error handler
 app.use(errorHandler);
 
 module.exports = app;
