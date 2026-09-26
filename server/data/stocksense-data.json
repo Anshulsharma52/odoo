@@ -1,0 +1,963 @@
+{
+  "users": [
+    {
+      "id": "usr-1",
+      "name": "Demo Admin",
+      "email": "admin@stocksense.com",
+      "password": "$2a$10$9apHDJqNm1kWaSiNevXv3eXCy5ptp0ZH6ZiwHaC1d8zicpmMoBBCu",
+      "role": "Inventory Manager",
+      "warehouse": "Main Warehouse",
+      "phone": "+1 (555) 019-2834",
+      "createdAt": "2026-08-27T04:54:36.962Z",
+      "updatedAt": "2026-09-26T05:23:44.845Z"
+    },
+    {
+      "id": "usr-2",
+      "name": "Alex Staff",
+      "email": "staff@stocksense.com",
+      "password": "$2a$10$MVUVd2ef9HZTwLNjzc70beFUSL51M5Y8BpoF03dtYDx5/bad15wMi",
+      "role": "Warehouse Staff",
+      "warehouse": "Main Warehouse",
+      "phone": "+1 (555) 019-4822",
+      "createdAt": "2026-09-06T04:54:36.962Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Raw Materials",
+      "description": "Metals, polymers, and raw inputs",
+      "productCount": 2,
+      "createdAt": "2026-09-26T04:54:36.961Z"
+    },
+    {
+      "id": "cat-2",
+      "name": "Finished Goods",
+      "description": "Complete items ready for distribution",
+      "productCount": 1,
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "cat-3",
+      "name": "Hardware",
+      "description": "Screws, bolts, fasteners, brackets",
+      "productCount": 1,
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "cat-4",
+      "name": "Packaging",
+      "description": "Boxes, tapes, wraps, cushioning",
+      "productCount": 1,
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "cat-5",
+      "name": "Electronics",
+      "description": "Cables, chips, circuit components",
+      "productCount": 1,
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "warehouses": [
+    {
+      "id": "wh-1",
+      "name": "Main Warehouse",
+      "code": "WH-MAIN",
+      "address": "100 Industrial Parkway, Sector 4",
+      "status": "Active",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "wh-2",
+      "name": "Secondary Warehouse",
+      "code": "WH-SEC",
+      "address": "45 Logistics Blvd, North Hub",
+      "status": "Active",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "wh-3",
+      "name": "Production Facility",
+      "code": "WH-PLANT",
+      "address": "12 Assembly Way, Industrial Zone",
+      "status": "Active",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-1",
+      "warehouseId": "wh-1",
+      "warehouseName": "Main Warehouse",
+      "name": "Rack A",
+      "code": "WH-MAIN-RACK-A",
+      "type": "Storage"
+    },
+    {
+      "id": "loc-2",
+      "warehouseId": "wh-1",
+      "warehouseName": "Main Warehouse",
+      "name": "Rack B",
+      "code": "WH-MAIN-RACK-B",
+      "type": "Storage"
+    },
+    {
+      "id": "loc-3",
+      "warehouseId": "wh-1",
+      "warehouseName": "Main Warehouse",
+      "name": "Receiving & Staging",
+      "code": "WH-MAIN-STAGE",
+      "type": "Input"
+    },
+    {
+      "id": "loc-4",
+      "warehouseId": "wh-2",
+      "warehouseName": "Secondary Warehouse",
+      "name": "Bay 1",
+      "code": "WH-SEC-BAY-1",
+      "type": "Storage"
+    },
+    {
+      "id": "loc-5",
+      "warehouseId": "wh-3",
+      "warehouseName": "Production Facility",
+      "name": "Production Floor",
+      "code": "WH-PLANT-PROD",
+      "type": "Internal"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "category": "Raw Materials",
+      "categoryId": "cat-1",
+      "unitOfMeasure": "kg",
+      "reorderLevel": 50,
+      "initialStock": 150,
+      "currentStock": 177,
+      "description": "High tensile carbon steel rods for framing and fabrication",
+      "locationStock": {
+        "WH-MAIN-RACK-A": 97,
+        "WH-MAIN-RACK-B": 80
+      },
+      "createdAt": "2026-09-19T04:54:36.962Z",
+      "updatedAt": "2026-09-26T05:23:44.716Z"
+    },
+    {
+      "id": "prod-2",
+      "name": "Ergonomic Office Chair",
+      "sku": "CHR-002",
+      "category": "Finished Goods",
+      "categoryId": "cat-2",
+      "unitOfMeasure": "units",
+      "reorderLevel": 15,
+      "initialStock": 40,
+      "currentStock": 40,
+      "description": "Adjustable mesh office chair with lumbar support",
+      "locationStock": {
+        "WH-MAIN-RACK-B": 40
+      },
+      "createdAt": "2026-09-20T04:54:36.962Z",
+      "updatedAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Aluminum Sheets 2mm",
+      "sku": "ALM-003",
+      "category": "Raw Materials",
+      "categoryId": "cat-1",
+      "unitOfMeasure": "kg",
+      "reorderLevel": 60,
+      "initialStock": 200,
+      "currentStock": 200,
+      "description": "Anodized aluminum alloy sheets for lightweight casing",
+      "locationStock": {
+        "WH-MAIN-RACK-A": 120,
+        "WH-PLANT-PROD": 80
+      },
+      "createdAt": "2026-09-21T04:54:36.962Z",
+      "updatedAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Industrial Screws M8",
+      "sku": "SCR-004",
+      "category": "Hardware",
+      "categoryId": "cat-3",
+      "unitOfMeasure": "boxes",
+      "reorderLevel": 25,
+      "initialStock": 18,
+      "currentStock": 18,
+      "description": "Standard steel hex cap screws (100 pcs per box)",
+      "locationStock": {
+        "WH-MAIN-RACK-A": 18
+      },
+      "createdAt": "2026-09-22T04:54:36.962Z",
+      "updatedAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "prod-5",
+      "name": "Heavy Duty Cardboard Box",
+      "sku": "BOX-005",
+      "category": "Packaging",
+      "categoryId": "cat-4",
+      "unitOfMeasure": "units",
+      "reorderLevel": 100,
+      "initialStock": 350,
+      "currentStock": 350,
+      "description": "Double-walled corrugated packing boxes (40x30x30 cm)",
+      "locationStock": {
+        "WH-MAIN-STAGE": 350
+      },
+      "createdAt": "2026-09-23T04:54:36.962Z",
+      "updatedAt": "2026-09-26T04:54:36.962Z"
+    },
+    {
+      "id": "prod-6",
+      "name": "Copper Wire Roll (10m)",
+      "sku": "CPR-006",
+      "category": "Electronics",
+      "categoryId": "cat-5",
+      "unitOfMeasure": "units",
+      "reorderLevel": 15,
+      "initialStock": 0,
+      "currentStock": 0,
+      "description": "Insulated copper grounding wire",
+      "locationStock": {},
+      "createdAt": "2026-09-24T04:54:36.962Z",
+      "updatedAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "rec-1790400224659-493",
+      "createdAt": "2026-09-26T05:23:44.659Z",
+      "updatedAt": "2026-09-26T05:23:44.674Z",
+      "receiptNumber": "REC-0006",
+      "supplier": "Test Metal Suppliers Inc",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 20,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:23:44.674Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "rec-1790398973729-14",
+      "createdAt": "2026-09-26T05:02:53.729Z",
+      "updatedAt": "2026-09-26T05:02:53.741Z",
+      "receiptNumber": "REC-0005",
+      "supplier": "Test Metal Suppliers Inc",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 20,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:53.741Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "rec-1790398927377-974",
+      "createdAt": "2026-09-26T05:02:07.377Z",
+      "updatedAt": "2026-09-26T05:02:07.383Z",
+      "receiptNumber": "REC-0004",
+      "supplier": "Test Metal Suppliers Inc",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 20,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:07.383Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "rec-1",
+      "receiptNumber": "REC-0001",
+      "supplier": "ABC Steel Corp",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 100,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "Delivered via logistics truck #419",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-21T04:54:36.962Z",
+      "validatedAt": "2026-09-21T04:54:36.962Z"
+    },
+    {
+      "id": "rec-2",
+      "receiptNumber": "REC-0002",
+      "supplier": "Apex Fasteners Ltd",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-STAGE",
+      "status": "READY",
+      "items": [
+        {
+          "productId": "prod-4",
+          "productName": "Industrial Screws M8",
+          "sku": "SCR-004",
+          "quantity": 30,
+          "unitOfMeasure": "boxes"
+        }
+      ],
+      "notes": "Awaiting QC inspect before validation",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-25T04:54:36.962Z"
+    },
+    {
+      "id": "rec-3",
+      "receiptNumber": "REC-0003",
+      "supplier": "Global Wire Solutions",
+      "warehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "status": "WAITING",
+      "items": [
+        {
+          "productId": "prod-6",
+          "productName": "Copper Wire Roll (10m)",
+          "sku": "CPR-006",
+          "quantity": 25,
+          "unitOfMeasure": "units"
+        }
+      ],
+      "notes": "Vendor dispatched from port",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "del-1790400224687-345",
+      "createdAt": "2026-09-26T05:23:44.687Z",
+      "updatedAt": "2026-09-26T05:23:44.705Z",
+      "deliveryNumber": "DEL-0005",
+      "customer": "Global Logistics Client",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 5,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:23:44.705Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "del-1790398973753-380",
+      "createdAt": "2026-09-26T05:02:53.753Z",
+      "updatedAt": "2026-09-26T05:02:53.764Z",
+      "deliveryNumber": "DEL-0004",
+      "customer": "Global Logistics Client",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 5,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:53.764Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "del-1790398927387-569",
+      "createdAt": "2026-09-26T05:02:07.387Z",
+      "updatedAt": "2026-09-26T05:02:07.401Z",
+      "deliveryNumber": "DEL-0003",
+      "customer": "Global Logistics Client",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 5,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:07.401Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "del-1",
+      "deliveryNumber": "DEL-0001",
+      "customer": "Apex Tech Corp",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-B",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-2",
+          "productName": "Ergonomic Office Chair",
+          "sku": "CHR-002",
+          "quantity": 10,
+          "unitOfMeasure": "units"
+        }
+      ],
+      "notes": "Client delivery confirmed by courier",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-23T04:54:36.962Z",
+      "validatedAt": "2026-09-23T04:54:36.962Z"
+    },
+    {
+      "id": "del-2",
+      "deliveryNumber": "DEL-0002",
+      "customer": "Horizon Enterprise",
+      "warehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-B",
+      "status": "WAITING",
+      "items": [
+        {
+          "productId": "prod-2",
+          "productName": "Ergonomic Office Chair",
+          "sku": "CHR-002",
+          "quantity": 5,
+          "unitOfMeasure": "units"
+        }
+      ],
+      "notes": "Order confirmed, pending warehouse packing",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "tra-1790400224709-950",
+      "createdAt": "2026-09-26T05:23:44.709Z",
+      "updatedAt": "2026-09-26T05:23:44.714Z",
+      "transferNumber": "TR-0005",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 10,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:23:44.714Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "tra-1790398973779-419",
+      "createdAt": "2026-09-26T05:02:53.779Z",
+      "updatedAt": "2026-09-26T05:02:53.796Z",
+      "transferNumber": "TR-0004",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 10,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:53.796Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "tra-1790398927405-455",
+      "createdAt": "2026-09-26T05:02:07.405Z",
+      "updatedAt": "2026-09-26T05:02:07.411Z",
+      "transferNumber": "TR-0003",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 10,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "",
+      "createdBy": "Demo Admin",
+      "validatedAt": "2026-09-26T05:02:07.411Z",
+      "validatedBy": "Demo Admin"
+    },
+    {
+      "id": "tr-1",
+      "transferNumber": "TR-0001",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-3",
+      "destinationLocation": "WH-PLANT-PROD",
+      "status": "DONE",
+      "items": [
+        {
+          "productId": "prod-3",
+          "productName": "Aluminum Sheets 2mm",
+          "sku": "ALM-003",
+          "quantity": 40,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "Internal move for frame fabrication",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-24T04:54:36.962Z",
+      "validatedAt": "2026-09-24T04:54:36.962Z"
+    },
+    {
+      "id": "tr-2",
+      "transferNumber": "TR-0002",
+      "sourceWarehouseId": "wh-1",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationWarehouseId": "wh-1",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "status": "READY",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Steel Rods (12mm)",
+          "sku": "STL-001",
+          "quantity": 20,
+          "unitOfMeasure": "kg"
+        }
+      ],
+      "notes": "Balancing rack capacity",
+      "createdBy": "Demo Admin",
+      "createdAt": "2026-09-26T04:54:36.962Z"
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "adj-1790400224717-86",
+      "createdAt": "2026-09-26T05:23:44.717Z",
+      "updatedAt": "2026-09-26T05:23:44.717Z",
+      "adjustmentNumber": "ADJ-0004",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "warehouseId": "wh-1",
+      "location": "WH-MAIN-RACK-A",
+      "previousQuantity": 102,
+      "countedQuantity": 97,
+      "difference": -5,
+      "reason": "Physical count damage write-off",
+      "status": "DONE",
+      "performedBy": "Demo Admin"
+    },
+    {
+      "id": "adj-1790398973810-440",
+      "createdAt": "2026-09-26T05:02:53.810Z",
+      "updatedAt": "2026-09-26T05:02:53.810Z",
+      "adjustmentNumber": "ADJ-0003",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "warehouseId": "wh-1",
+      "location": "WH-MAIN-RACK-A",
+      "previousQuantity": 102,
+      "countedQuantity": 97,
+      "difference": -5,
+      "reason": "Physical count damage write-off",
+      "status": "DONE",
+      "performedBy": "Demo Admin"
+    },
+    {
+      "id": "adj-1790398927426-5",
+      "createdAt": "2026-09-26T05:02:07.426Z",
+      "updatedAt": "2026-09-26T05:02:07.426Z",
+      "adjustmentNumber": "ADJ-0002",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "warehouseId": "wh-1",
+      "location": "WH-MAIN-RACK-A",
+      "previousQuantity": 105,
+      "countedQuantity": 97,
+      "difference": -8,
+      "reason": "Physical count damage write-off",
+      "status": "DONE",
+      "performedBy": "Demo Admin"
+    },
+    {
+      "id": "adj-1",
+      "adjustmentNumber": "ADJ-0001",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "warehouseId": "wh-1",
+      "location": "WH-MAIN-RACK-A",
+      "previousQuantity": 103,
+      "countedQuantity": 100,
+      "difference": -3,
+      "reason": "Damaged in transit",
+      "status": "DONE",
+      "performedBy": "Demo Admin",
+      "createdAt": "2026-09-25T04:54:36.962Z"
+    }
+  ],
+  "stockLedger": [
+    {
+      "id": "sto-1790400224718-301",
+      "createdAt": "2026-09-26T05:23:44.718Z",
+      "updatedAt": "2026-09-26T05:23:44.718Z",
+      "date": "2026-09-26T05:23:44.718Z",
+      "transactionType": "ADJUSTMENT",
+      "referenceNumber": "ADJ-0004",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Inventory Loss (Physical count damage write-off)",
+      "quantity": -5,
+      "previousStock": 182,
+      "newStock": 177,
+      "performedBy": "Demo Admin",
+      "notes": "Physical count damage write-off"
+    },
+    {
+      "id": "sto-1790400224713-517",
+      "createdAt": "2026-09-26T05:23:44.713Z",
+      "updatedAt": "2026-09-26T05:23:44.713Z",
+      "date": "2026-09-26T05:23:44.713Z",
+      "transactionType": "TRANSFER",
+      "referenceNumber": "TR-0005",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "quantity": 10,
+      "previousStock": 182,
+      "newStock": 182,
+      "performedBy": "Demo Admin",
+      "notes": "Internal transfer from WH-MAIN-RACK-A to WH-MAIN-RACK-B"
+    },
+    {
+      "id": "sto-1790400224704-747",
+      "createdAt": "2026-09-26T05:23:44.704Z",
+      "updatedAt": "2026-09-26T05:23:44.704Z",
+      "date": "2026-09-26T05:23:44.704Z",
+      "transactionType": "DELIVERY",
+      "referenceNumber": "DEL-0005",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Customer (Global Logistics Client)",
+      "quantity": -5,
+      "previousStock": 187,
+      "newStock": 182,
+      "performedBy": "Demo Admin",
+      "notes": "Dispatched to customer Global Logistics Client"
+    },
+    {
+      "id": "sto-1790400224674-386",
+      "createdAt": "2026-09-26T05:23:44.674Z",
+      "updatedAt": "2026-09-26T05:23:44.674Z",
+      "date": "2026-09-26T05:23:44.674Z",
+      "transactionType": "RECEIPT",
+      "referenceNumber": "REC-0006",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "Vendor (Test Metal Suppliers Inc)",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "quantity": 20,
+      "previousStock": 167,
+      "newStock": 187,
+      "performedBy": "Demo Admin",
+      "notes": "Stock intake from supplier Test Metal Suppliers Inc"
+    },
+    {
+      "id": "sto-1790398973810-813",
+      "createdAt": "2026-09-26T05:02:53.810Z",
+      "updatedAt": "2026-09-26T05:02:53.810Z",
+      "date": "2026-09-26T05:02:53.810Z",
+      "transactionType": "ADJUSTMENT",
+      "referenceNumber": "ADJ-0003",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Inventory Loss (Physical count damage write-off)",
+      "quantity": -5,
+      "previousStock": 172,
+      "newStock": 167,
+      "performedBy": "Demo Admin",
+      "notes": "Physical count damage write-off"
+    },
+    {
+      "id": "sto-1790398973795-60",
+      "createdAt": "2026-09-26T05:02:53.795Z",
+      "updatedAt": "2026-09-26T05:02:53.795Z",
+      "date": "2026-09-26T05:02:53.795Z",
+      "transactionType": "TRANSFER",
+      "referenceNumber": "TR-0004",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "quantity": 10,
+      "previousStock": 172,
+      "newStock": 172,
+      "performedBy": "Demo Admin",
+      "notes": "Internal transfer from WH-MAIN-RACK-A to WH-MAIN-RACK-B"
+    },
+    {
+      "id": "sto-1790398973764-370",
+      "createdAt": "2026-09-26T05:02:53.764Z",
+      "updatedAt": "2026-09-26T05:02:53.764Z",
+      "date": "2026-09-26T05:02:53.764Z",
+      "transactionType": "DELIVERY",
+      "referenceNumber": "DEL-0004",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Customer (Global Logistics Client)",
+      "quantity": -5,
+      "previousStock": 177,
+      "newStock": 172,
+      "performedBy": "Demo Admin",
+      "notes": "Dispatched to customer Global Logistics Client"
+    },
+    {
+      "id": "sto-1790398973740-649",
+      "createdAt": "2026-09-26T05:02:53.740Z",
+      "updatedAt": "2026-09-26T05:02:53.740Z",
+      "date": "2026-09-26T05:02:53.740Z",
+      "transactionType": "RECEIPT",
+      "referenceNumber": "REC-0005",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "Vendor (Test Metal Suppliers Inc)",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "quantity": 20,
+      "previousStock": 157,
+      "newStock": 177,
+      "performedBy": "Demo Admin",
+      "notes": "Stock intake from supplier Test Metal Suppliers Inc"
+    },
+    {
+      "id": "sto-1790398927428-786",
+      "createdAt": "2026-09-26T05:02:07.428Z",
+      "updatedAt": "2026-09-26T05:02:07.428Z",
+      "date": "2026-09-26T05:02:07.428Z",
+      "transactionType": "ADJUSTMENT",
+      "referenceNumber": "ADJ-0002",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Inventory Loss (Physical count damage write-off)",
+      "quantity": -8,
+      "previousStock": 165,
+      "newStock": 157,
+      "performedBy": "Demo Admin",
+      "notes": "Physical count damage write-off"
+    },
+    {
+      "id": "sto-1790398927409-632",
+      "createdAt": "2026-09-26T05:02:07.410Z",
+      "updatedAt": "2026-09-26T05:02:07.410Z",
+      "date": "2026-09-26T05:02:07.409Z",
+      "transactionType": "TRANSFER",
+      "referenceNumber": "TR-0003",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "quantity": 10,
+      "previousStock": 165,
+      "newStock": 165,
+      "performedBy": "Demo Admin",
+      "notes": "Internal transfer from WH-MAIN-RACK-A to WH-MAIN-RACK-B"
+    },
+    {
+      "id": "sto-1790398927401-64",
+      "createdAt": "2026-09-26T05:02:07.401Z",
+      "updatedAt": "2026-09-26T05:02:07.401Z",
+      "date": "2026-09-26T05:02:07.401Z",
+      "transactionType": "DELIVERY",
+      "referenceNumber": "DEL-0003",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Customer (Global Logistics Client)",
+      "quantity": -5,
+      "previousStock": 170,
+      "newStock": 165,
+      "performedBy": "Demo Admin",
+      "notes": "Dispatched to customer Global Logistics Client"
+    },
+    {
+      "id": "sto-1790398927383-302",
+      "createdAt": "2026-09-26T05:02:07.383Z",
+      "updatedAt": "2026-09-26T05:02:07.383Z",
+      "date": "2026-09-26T05:02:07.383Z",
+      "transactionType": "RECEIPT",
+      "referenceNumber": "REC-0004",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "Vendor (Test Metal Suppliers Inc)",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "quantity": 20,
+      "previousStock": 150,
+      "newStock": 170,
+      "performedBy": "Demo Admin",
+      "notes": "Stock intake from supplier Test Metal Suppliers Inc"
+    },
+    {
+      "id": "led-5",
+      "date": "2026-09-25T04:54:36.962Z",
+      "transactionType": "ADJUSTMENT",
+      "referenceNumber": "ADJ-0001",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "Damaged / Write-Off",
+      "quantity": -3,
+      "previousStock": 153,
+      "newStock": 150,
+      "performedBy": "Demo Admin",
+      "notes": "Damaged during forklift handling"
+    },
+    {
+      "id": "led-4",
+      "date": "2026-09-24T04:54:36.962Z",
+      "transactionType": "TRANSFER",
+      "referenceNumber": "TR-0001",
+      "productId": "prod-3",
+      "productName": "Aluminum Sheets 2mm",
+      "sku": "ALM-003",
+      "sourceLocation": "WH-MAIN-RACK-A",
+      "destinationLocation": "WH-PLANT-PROD",
+      "quantity": 40,
+      "previousStock": 200,
+      "newStock": 200,
+      "performedBy": "Demo Admin",
+      "notes": "Shifted to production line for assembly"
+    },
+    {
+      "id": "led-3",
+      "date": "2026-09-23T04:54:36.962Z",
+      "transactionType": "DELIVERY",
+      "referenceNumber": "DEL-0001",
+      "productId": "prod-2",
+      "productName": "Ergonomic Office Chair",
+      "sku": "CHR-002",
+      "sourceLocation": "WH-MAIN-RACK-B",
+      "destinationLocation": "Customer (Apex Tech Corp)",
+      "quantity": -10,
+      "previousStock": 50,
+      "newStock": 40,
+      "performedBy": "Demo Admin",
+      "notes": "Dispatched order SO-410"
+    },
+    {
+      "id": "led-2",
+      "date": "2026-09-22T04:54:36.962Z",
+      "transactionType": "RECEIPT",
+      "referenceNumber": "REC-0001",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "Vendor (ABC Steel Corp)",
+      "destinationLocation": "WH-MAIN-RACK-B",
+      "quantity": 50,
+      "previousStock": 100,
+      "newStock": 150,
+      "performedBy": "Demo Admin",
+      "notes": "Secondary rack shelving"
+    },
+    {
+      "id": "led-1",
+      "date": "2026-09-21T04:54:36.962Z",
+      "transactionType": "RECEIPT",
+      "referenceNumber": "REC-0001",
+      "productId": "prod-1",
+      "productName": "Steel Rods (12mm)",
+      "sku": "STL-001",
+      "sourceLocation": "Vendor (ABC Steel Corp)",
+      "destinationLocation": "WH-MAIN-RACK-A",
+      "quantity": 100,
+      "previousStock": 0,
+      "newStock": 100,
+      "performedBy": "Demo Admin",
+      "notes": "Initial stock intake from vendor PO-902"
+    }
+  ],
+  "otpCodes": []
+}
